@@ -1,24 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Movie from './Movie';
+import { MovieContext } from './MovieContext';
 
 const MovieList = () => {
-	const [movieList, setMovieList] = useState([
-		{
-			name: 'Terminator 2: Judgement Day',
-			price: 'priceless',
-			id: 800,
-		},
-		{
-			name: 'The Dark Knight',
-			price: '9.999',
-			id: 10,
-		},
-		{
-			name: 'Captain America: The Winter Soldier',
-			price: '15.99',
-			id: 2014,
-		},
-	]);
+	const [movieList, setMovieList] = useContext(MovieContext);
 	return (
 		<>
 			{movieList.map(movie => (
